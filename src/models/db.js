@@ -33,7 +33,8 @@ async function insert(dados){
             dados = {
                 numID: id,
                 nome: dados.nome,
-                score: dados.score
+                score: dados.score,
+                moedas: dados.moedas
             }
             console.log(dados)
             let resp = await ctx.insert(db.col,`${id}`, dados)

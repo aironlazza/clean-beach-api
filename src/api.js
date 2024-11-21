@@ -8,7 +8,7 @@ app.get('/', (req,res)=>{
 });
 app.get('/query', async(req,res)=>{
     const db = require('./models/db');
-    res.status(200).send(await db.query("SELECT nome, score FROM `_default` ORDER BY score DESC LIMIT 5"));
+    res.status(200).send(await db.query("SELECT nome, score, moedas FROM `_default` ORDER BY score DESC LIMIT 20"));
     
 });
 app.post('/insert', async(req,res)=>{
