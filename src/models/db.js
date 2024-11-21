@@ -6,14 +6,14 @@ async function connect(){
         password: process.env.DB_PASSWORD
     });
     const bucket = cluster.bucket("travel-sample");
-    const scope = bucket.scope('inventory');
+    const scope = bucket.scope('teste');
     return scope;
     //teste
 };
 
-async function select(query,params){
+async function query(query,params){
     const db = await connect();
     let queryResult = await db.query(query, {parameters: params});
     return queryResult.rows;
 }
-module.exports = {select};
+module.exports = {query};
